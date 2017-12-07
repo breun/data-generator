@@ -56,38 +56,38 @@ private object MinimalDataGeneratorConfig : DataGeneratorConfig {
         get() = mapOf(
                 // Built-ins
                 Boolean::class to { false },
-                Byte::class to { 0.toByte() },
-                Char::class to { 0.toChar() },
-                Double::class to { 0.toDouble() },
-                Float::class to { 0.toFloat() },
-                Int::class to { 0 },
-                Long::class to { 0.toLong() },
-                Short::class to { 0.toShort() },
-                String::class to { "_" }, // Empty string would be even more minimal, but is often handled the same as a missing value
+                Byte::class          to { 0.toByte() },
+                Char::class          to { 0.toChar() },
+                Double::class        to { 0.toDouble() },
+                Float::class         to { 0.toFloat() },
+                Int::class           to { 0 },
+                Long::class          to { 0.toLong() },
+                Short::class         to { 0.toShort() },
+                String::class        to { "_" }, // Empty string would be even more minimal, but is often handled the same as a missing value
 
                 // kotlin.collections.*
-                List::class to { emptyList<Any>() },
-                Map::class to { emptyMap<Any, Any>() },
-                Set::class to { emptySet<Any>() },
+                List::class          to { emptyList<Any>() },
+                Map::class           to { emptyMap<Any, Any>() },
+                Set::class           to { emptySet<Any>() },
 
                 // kotlin.sequences.*
-                Sequence::class to { emptySequence<Any>() },
+                Sequence::class      to { emptySequence<Any>() },
 
                 // java.math.*
-                BigDecimal::class to { 0.toBigDecimal() },
-                BigInteger::class to { 0.toBigInteger() },
+                BigDecimal::class    to { 0.toBigDecimal() },
+                BigInteger::class    to { 0.toBigInteger() },
 
                 // java.time.*
-                Duration::class to { Duration.ZERO },
-                Instant::class to { Instant.MIN },
-                LocalDate::class to { LocalDate.MIN },
+                Duration::class      to { Duration.ZERO },
+                Instant::class       to { Instant.MIN },
+                LocalDate::class     to { LocalDate.MIN },
                 LocalDateTime::class to { LocalDateTime.MIN },
-                LocalTime::class to { LocalTime.MIN },
-                MonthDay::class to { MonthDay.of(Month.JANUARY, 1) },
-                OffsetTime::class to { OffsetTime.MIN },
-                Period::class to { Period.ZERO },
-                Year::class to { Year.MIN_VALUE },
-                YearMonth::class to { YearMonth.of(Year.MIN_VALUE, Month.JANUARY) },
+                LocalTime::class     to { LocalTime.MIN },
+                MonthDay::class      to { MonthDay.of(Month.JANUARY, 1) },
+                OffsetTime::class    to { OffsetTime.MIN },
+                Period::class        to { Period.ZERO },
+                Year::class          to { Year.MIN_VALUE },
+                YearMonth::class     to { YearMonth.of(Year.MIN_VALUE, Month.JANUARY) },
                 ZonedDateTime::class to { ZonedDateTime.ofInstant(Instant.MIN, ZoneId.systemDefault()) }
         )
 }
